@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: auth-server
+
+  security:
+    oauth2:
+      authorizationserver:
+        issuer: http://127.0.0.1:9000
+        client:
+          articles-client:
+            registration:
+              client-id: articles-client
+              client-secret: "{noop}secret"
+              client-name: Articles Client
+              client-authentication-methods:
+                - client_secret_basic
+              authorization_grant_types:
+                - authorization_code
+                - refresh_token
+              redirect-uris:
+                - http://127.0.0.1:8080/login/oauth2/code/articles-client-oidc
+                - http://127.0.0.1:8080/authorized
+              scopes:
+                - openid
+                - articles.read
+server:
+  port: 9000
