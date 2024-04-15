@@ -14,7 +14,7 @@ spring:
               client-name: Articles Client
               client-authentication-methods:
                 - client_secret_basic
-              authorization_grant_types:
+              authorization-grant-types:
                 - authorization_code
                 - refresh_token
               redirect-uris:
