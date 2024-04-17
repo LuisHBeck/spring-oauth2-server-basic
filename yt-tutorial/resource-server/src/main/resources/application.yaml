@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: resource-server
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://127.0.0.1:9000 # asks that endpoint if the received jwt token is valid
+
+server:
+  port: 9090
